@@ -27,11 +27,20 @@ module "bigquery-dataset" {
   depends_on       = [module.gcp-project]
 }
 
-## DBT
+## DBT IAM Resources
 
-# module "dbt-project" {
-#   source = "./dbt-project"
-#   gcp_project_id = local.gcp_project_id
-#   gcp_account_id = "70403103945172"
-#   bigquery_dataset = module.bigquery-dataset.dataset_id
-# }
+
+resource "google_service_account" "dbt_service_account" {
+  account_id   = local.gcp_project_id
+  display_name = "dbt Cloud Service Account"
+}
+
+resource "google_service_account_key" "dbt_sa_key" {
+  service_account_id = google_service_account.dbt_service_account.name
+}
+
+resource "google_project_iam_member" "dbt_service_account_role" {
+  project = local.gcp_project_id
+  role    = "roles/bigquery.dataEditor"
+  member  = "serviceAccount:${google_service_account.dbt_service_account.email}"
+}

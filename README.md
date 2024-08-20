@@ -7,12 +7,13 @@ Terraform resources to set up DBT on GCP
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_dbtcloud"></a> [dbtcloud](#requirement\_dbtcloud) | ~> 0.3 |
 | <a name="requirement_google"></a> [google](#requirement\_google) | >= 4.0 |
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_google"></a> [google](#provider\_google) | 5.42.0 |
 
 ## Modules
 
@@ -23,14 +24,16 @@ No providers.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [google_project_iam_member.dbt_service_account_role](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_iam_member) | resource |
+| [google_service_account.dbt_service_account](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account) | resource |
+| [google_service_account_key.dbt_sa_key](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account_key) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_dbtcloud_account_id"></a> [dbtcloud\_account\_id](#input\_dbtcloud\_account\_id) | Account ID for dbt Cloud | `string` | n/a | yes |
-| <a name="input_dbtcloud_token"></a> [dbtcloud\_token](#input\_dbtcloud\_token) | API token for dbt Cloud | `string` | n/a | yes |
 | <a name="input_gcp_billing_account_id"></a> [gcp\_billing\_account\_id](#input\_gcp\_billing\_account\_id) | The billing account ID | `string` | n/a | yes |
 | <a name="input_gcp_region"></a> [gcp\_region](#input\_gcp\_region) | The region to deploy resources | `string` | `"europe-west1"` | no |
 
