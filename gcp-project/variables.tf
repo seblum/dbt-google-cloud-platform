@@ -19,3 +19,8 @@ variable "auto_create_network" {
   type        = bool
   default     = false
 }
+
+variable "gcp_billing_account_id" {
+  description = "The billing account ID"
+  type        = string
+}

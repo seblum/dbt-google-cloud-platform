@@ -3,7 +3,7 @@ locals {
   bigquery_table_list = flatten([
     for dataset_name, config in var.bigquery_configs : [
       for table_name, table_config in config.tables : {
-        table_key = "${dataset_name}-${table_name}"
+        table_key  = "${dataset_name}-${table_name}"
         dataset_id = config.dataset.dataset_id
         table_id   = table_config.table_id
         schema     = table_config.schema
@@ -33,4 +33,6 @@ resource "google_bigquery_table" "bq_table" {
   project    = var.project_id
 
   schema = jsonencode(each.value.schema)
+
+  depends_on = [google_bigquery_dataset.bq_dataset]
 }

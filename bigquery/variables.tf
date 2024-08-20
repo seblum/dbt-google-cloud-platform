@@ -7,7 +7,7 @@ variable "bigquery_configs" {
     })
     tables = map(object({
       table_id = string
-      schema   = list(object({
+      schema = list(object({
         name = string
         type = string
         mode = string
@@ -42,6 +42,6 @@ variable "bigquery_configs" {
 }
 
 variable "project_id" {
-    description = "The GCP project ID"
-    type        = string
+  description = "The GCP project ID"
+  type        = string
 }

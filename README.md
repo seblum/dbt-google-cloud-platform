@@ -31,6 +31,7 @@ No resources.
 |------|-------------|------|---------|:--------:|
 | <a name="input_dbtcloud_account_id"></a> [dbtcloud\_account\_id](#input\_dbtcloud\_account\_id) | Account ID for dbt Cloud | `string` | n/a | yes |
 | <a name="input_dbtcloud_token"></a> [dbtcloud\_token](#input\_dbtcloud\_token) | API token for dbt Cloud | `string` | n/a | yes |
+| <a name="input_gcp_billing_account_id"></a> [gcp\_billing\_account\_id](#input\_gcp\_billing\_account\_id) | The billing account ID | `string` | n/a | yes |
 | <a name="input_gcp_region"></a> [gcp\_region](#input\_gcp\_region) | The region to deploy resources | `string` | `"europe-west1"` | no |
 
 ## Outputs

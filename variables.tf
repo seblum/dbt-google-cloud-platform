@@ -15,3 +15,8 @@ variable "gcp_region" {
   type        = string
   default     = "europe-west1"
 }
+
+variable "gcp_billing_account_id" {
+  description = "The billing account ID"
+  type        = string
+}

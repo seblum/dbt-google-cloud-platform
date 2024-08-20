@@ -1,14 +1,47 @@
-example_dataset:
+dbt_example_dataset:
   dataset:
-    dataset_id: example_dataset
+    dataset_id: dbt_example_dataset
     location: EU
   tables:
-    example_table:
-      table_id: example_table
+    jaffle_shop:
+      table_id: jaffle_shop
       schema:
         - name: id
           type: STRING
           mode: REQUIRED
-        - name: value
+        - name: orderid
+          type: FLOAT
+          mode: NULLABLE
+        - name: paymentmethod
+          type: FLOAT
+          mode: NULLABLE
+        - name: status
+          type: FLOAT
+          mode: NULLABLE
+        - name: amount
+          type: FLOAT
+          mode: NULLABLE
+        - name: created
+          type: FLOAT
+          mode: NULLABLE
+    stripe:
+      table_id: stripe
+      schema:
+        - name: id
+          type: STRING
+          mode: REQUIRED
+        - name: orderid
+          type: FLOAT
+          mode: NULLABLE
+        - name: paymentmethod
+          type: FLOAT
+          mode: NULLABLE
+        - name: status
+          type: FLOAT
+          mode: NULLABLE
+        - name: amount
+          type: FLOAT
+          mode: NULLABLE
+        - name: created
           type: FLOAT
           mode: NULLABLE
