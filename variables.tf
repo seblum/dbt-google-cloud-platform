@@ -13,5 +13,5 @@ variable "dbtcloud_account_id" {
 variable "gcp_region" {
   description = "The region to deploy resources"
   type        = string
-  default     = "europe-west1"  
+  default     = "europe-west1"
 }

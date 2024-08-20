@@ -20,8 +20,8 @@ module "gcp-project" {
 ## Bigquery
 
 module "bigquery-dataset" {
-  source         = "./bigquery"
-  project_id     = local.gcp_project_id
+  source           = "./bigquery"
+  project_id       = local.gcp_project_id
   bigquery_configs = yamldecode(file("./bigquery_configs.yaml"))
 }
 
