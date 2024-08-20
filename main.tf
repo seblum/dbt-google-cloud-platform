@@ -35,12 +35,13 @@ resource "google_service_account" "dbt_service_account" {
   display_name = "dbt Cloud Service Account"
 }
 
-resource "google_service_account_key" "dbt_sa_key" {
-  service_account_id = google_service_account.dbt_service_account.name
-}
+resource "google_project_iam_member" "dbt_service_account_roles" {
+  for_each = toset([
+    "roles/bigquery.dataEditor",
+    "roles/bigquery.jobUser",
+  ])
 
-resource "google_project_iam_member" "dbt_service_account_role" {
   project = local.gcp_project_id
-  role    = "roles/bigquery.dataEditor"
+  role    = each.value
   member  = "serviceAccount:${google_service_account.dbt_service_account.email}"
 }
