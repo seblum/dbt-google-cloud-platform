@@ -1,18 +1,18 @@
 resource "random_string" "random" {
-  length           = 8
-  upper = false
-  special          = false
+  length  = 8
+  upper   = false
+  special = false
 }
 
 locals {
-    state_bucket_name = "tf-state-bucket-${random_string.random.result}"
+  state_bucket_name = "tf-state-bucket-${random_string.random.result}"
 }
 
 resource "google_storage_bucket" "terraform_state" {
-  name                        = local.state_bucket_name
-  location                    = "EU"
-  storage_class               = "STANDARD"
-  force_destroy               = true
+  name          = local.state_bucket_name
+  location      = "EU"
+  storage_class = "STANDARD"
+  force_destroy = true
 
   versioning {
     enabled = true

@@ -4,15 +4,25 @@ terraform {
       source  = "hashicorp/google"
       version = ">= 4.0"
     }
+
+    local = {
+      source  = "hashicorp/local"
+      version = ">= 1.4.0"
+    }
+
+    random = {
+      source  = "hashicorp/random"
+      version = ">= 3.0"
+    }
   }
 
   required_version = ">= 1.0.0"
 
   backend "gcs" {
-      bucket  = "tf-state-bucket-l8h28uof"
-      prefix  = "terraform/state"
-      project = "iac-shared"
-    }
+    bucket  = "tf-state-bucket-l8h28uof"
+    prefix  = "terraform/state"
+    project = "iac-shared"
+  }
 }
 
 provider "google" {
