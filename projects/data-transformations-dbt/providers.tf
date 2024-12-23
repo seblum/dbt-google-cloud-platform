@@ -24,7 +24,6 @@ terraform {
   backend "gcs" {
     bucket  = "tf-state-bucket-t0ibghzw"
     prefix  = "terraform/state"
-    project = "data-transformations-dbt"
   }
 }
 

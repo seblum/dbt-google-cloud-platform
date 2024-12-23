@@ -32,11 +32,11 @@ locals {
   }
 }
 
-# # Create IAM bindings dynamically using the refactored structure
-# resource "google_project_iam_member" "iam_bindings" {
-#   for_each = local.test_map
+# Create IAM bindings dynamically using the refactored structure
+resource "google_project_iam_member" "iam_bindings" {
+  for_each = local.test_map
 
-#   project = module.gcp-project.gcp_project_id
-#   role    = each.value.role
-#   member  = each.value.member
-# }
+  project = module.gcp-project.gcp_project_id
+  role    = each.value.role
+  member  = each.value.member
+}
