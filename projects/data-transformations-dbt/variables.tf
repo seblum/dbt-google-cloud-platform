@@ -1,4 +1,5 @@
 # GCP variables
+
 variable "gcp_region" {
   description = "The region to deploy resources"
   type        = string

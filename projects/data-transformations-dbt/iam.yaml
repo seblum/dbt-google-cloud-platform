@@ -1,0 +1,11 @@
+iam-bindings:
+  - member: "serviceAccount:port-integration@iac-shared.iam.gserviceaccount.com"
+    roles:
+      - "roles/browser"
+      - "roles/cloudasset.viewer"
+      - "roles/iam.serviceAccountViewer"
+  - member: "serviceAccount:bq-dbt-transformation@data-transformation-dbt.iam.gserviceaccount.com"
+    roles: 
+      - "roles/bigquery.dataEditor"
+      - "roles/bigquery.jobUser"
+

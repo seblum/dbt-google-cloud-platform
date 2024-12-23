@@ -7,7 +7,6 @@ resource "google_project" "gcp_project" {
   project_id          = var.gcp_project_id
   auto_create_network = var.auto_create_network
   billing_account     = var.gcp_billing_account_id
-  # org_id     = var.gcp_organization_id
 }
 
 resource "google_project_service" "project_services" {
