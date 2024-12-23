@@ -1,2 +1,3 @@
-# dbt-google-cloud-platform
-Terraform resources to set up DBT on GCP
+# iac-google-cloud
+
+Terraform resources to manage GCP projects
