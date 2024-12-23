@@ -22,8 +22,8 @@ terraform {
   required_version = ">= 1.0.0"
 
   backend "gcs" {
-    bucket  = "tf-state-bucket-t0ibghzw"
-    prefix  = "terraform/state"
+    bucket = "tf-state-bucket-t0ibghzw"
+    prefix = "terraform/state"
   }
 }
 

@@ -9,10 +9,11 @@ locals {
 }
 
 resource "google_storage_bucket" "terraform_state" {
-  name          = local.state_bucket_name
-  location      = "EU"
-  storage_class = "STANDARD"
-  force_destroy = true
+  name                        = local.state_bucket_name
+  location                    = "EU"
+  storage_class               = "STANDARD"
+  uniform_bucket_level_access = true
+  force_destroy               = true
 
   versioning {
     enabled = true

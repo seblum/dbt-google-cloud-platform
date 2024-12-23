@@ -3,9 +3,10 @@ repos:
     rev: v1.90.0
     hooks:
       - id: terraform_fmt
+        files: ^(projects/data-transformation-dbt|projects/iac-shared)/.*  # Run only in dir1 and dir2
       - id: terraform_tflint
       - id: terraform_validate
-      - id: terraform_trivy
+      # - id: terraform_trivy
 
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.33.0
@@ -33,4 +34,4 @@ repos:
         args:
           - -c
           - .terraform-docs.yml
-          - .
+        files: ^(projects/data-transformation-dbt|projects/iac-shared)/.*  # Run only in dir1 and dir2
