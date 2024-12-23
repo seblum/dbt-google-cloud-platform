@@ -8,6 +8,14 @@ terraform {
       source  = "dbt-labs/dbtcloud"
       version = "~> 0.3"
     }
+    local = {
+      source  = "hashicorp/local"
+      version = ">= 1.4.0"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = ">= 3.0"
+    }
 
   }
 
